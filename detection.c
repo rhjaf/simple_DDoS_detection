@@ -36,7 +36,7 @@ void *receive() {
     tcp_recvpkt = (struct tcphdr*) malloc(sizeof(struct tcphdr));
 
     // create socket, cast datagram into tcp header
-    if ((recvfd = socket(AF_PACKET, SOCK_RAW, htons(ETH_P_IP))) == -1) {
+    if ((recvfd = socket(AF_PACKET, SOCK_RAW, htons(ETH_P_ALL))) == -1) {
         perror("Error with recvfd...\n");
     }
     while (1) {
